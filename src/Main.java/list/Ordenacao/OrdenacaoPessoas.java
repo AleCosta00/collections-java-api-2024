@@ -2,6 +2,7 @@ package Ordenacao;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class OrdenacaoPessoas {
@@ -29,7 +30,12 @@ public class OrdenacaoPessoas {
   public List<Pessoa> ordenarPorAltura() {
     List<Pessoa> pessoasPorAltura = new ArrayList<>(pessoaList);
     if (!pessoaList.isEmpty()) {
-      Collections.sort(pessoasPorAltura, new ComparatorPorAltura());
+      Collections.sort(pessoasPorAltura, new Comparator<Pessoa>() {
+        @Override
+        public int compare(Pessoa p1, Pessoa p2) {
+          return Double.compare(p1.getAltura(), p2.getAltura());
+        }
+      });
       return pessoasPorAltura;
     } else {
       throw new RuntimeException("A lista está vazia!");
