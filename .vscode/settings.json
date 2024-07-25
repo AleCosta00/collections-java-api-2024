@@ -1,6 +1,7 @@
 {
     "java.project.sourcePaths": [
         "src/Main.java/list/OperacoesBasicas",
-        "src/Main.java/list"
+        "src/Main.java/list",
+        "src/Main.java/set/OperacoesBasicas"
     ]
 }
